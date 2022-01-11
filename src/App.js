@@ -1,6 +1,8 @@
 import './App.css';
 import Card from './Components/Card';
-
+import { store, persistor } from "./store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   return (
@@ -17,4 +19,14 @@ function App() {
   );
 }
 
-export default App;
+const AppWrapped = () => {
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
+  )
+}
+
+export default AppWrapped;
