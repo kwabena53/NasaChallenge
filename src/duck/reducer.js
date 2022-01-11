@@ -17,7 +17,7 @@ export default function reducer(state = INITIAL_STATE, action = { type: "" }) {
         case GET_DATA_SUCCESS:
             return {
                 ...state,
-                apods: action.data,
+                ...action.data,
             };
         case GET_DATA_ERROR:
             return {
