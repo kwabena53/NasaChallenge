@@ -1,0 +1,23 @@
+.card{
+background: #FFFFFF;
+box-shadow: 0px 4px 12px rgba(32, 54, 72, 0.05);
+border-radius: 16px;
+padding: 2em;
+margin-bottom: 2em;
+}
+
+.image{
+    width: 440px;
+    height: 440px;
+    object-fit: contain;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc:first-letter{
+    text-transform: capitalize
+  }
