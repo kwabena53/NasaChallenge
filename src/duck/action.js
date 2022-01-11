@@ -5,10 +5,8 @@ export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS"
 export const GET_DATA_ERROR = "GET_DATA_ERROR"
 
 
-const REACT_API = process.env.REACT_API
-const API_KEY = process.env.REACT_API
-
-
+const REACT_APP_NASA_API = process.env.REACT_APP_NASA_API
+const REACT_APP_NASA_API_KEY = process.env.REACT_APP_NASA_API_KEY
 
 
 
@@ -17,17 +15,17 @@ export const getData = () => {
         dispatch({
             type: GET_DATA_REQUEST,
         });
-
+        
+        
         try {
             const { data } = await axios.get(
-                `${REACT_API}?${API_KEY}&start_date=2022-01-1&end_date=2022-01-10`,
+                `${REACT_APP_NASA_API}?api_key=${REACT_APP_NASA_API_KEY}&start_date=2022-01-1&end_date=2022-01-10`,
             );
             dispatch({
                 type: GET_DATA_SUCCESS,
                 data
             });
         } catch (error) {
-           
             if (!error.response) {
                 dispatch({
                     type: GET_DATA_ERROR,

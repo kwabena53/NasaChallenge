@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     gettingData: false
 }
 
-export default function reducer  (state = INITIAL_STATE, action = { type: "" }) {
+export default function reducer(state = INITIAL_STATE, action = { type: "" }) {
 
     const { type } = action;
     switch (type) {
