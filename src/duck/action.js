@@ -39,7 +39,7 @@ export const getData = () => {
                 data
             });
 
-
+            localStorage.setItem("storedApods", data)
             
         } catch (error) {
             if (!error.response) {
