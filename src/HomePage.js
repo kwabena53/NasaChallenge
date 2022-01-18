@@ -5,8 +5,8 @@ import SkeletonLoader from './Components/SkeletonLoader';
 
 const HomePage=() =>{
     let state = useSelector((state)=>state?.data?.apod)
-    // const savedState = JSON.parse(localStorage.getItem('storedApods'))
-    // state = savedState? savedState: state
+    const savedState = JSON.parse(localStorage.getItem('storedApods'))
+    state = savedState? savedState: state
 
 
   return (

@@ -15,7 +15,7 @@ const persistConfig = {
   key: "root",
   storage,
   stateReconciler: hardSet,
-  whitelist: ['data']
+  // whitelist: ['data']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

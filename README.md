@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Spacetagram - Using NASA's APOD API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a mini-project that uses the [NASA's Astronomy Photo of the day (APOD) API](https://api.nasa.gov/) to show the APOD for the last 7 days.
+The app using React, Redux for state management, React hooks, localstorage for persisting data and other helper libraries
 
-## Available Scripts
+## Feature
+- The app can get the NASA APOD for the last 7 days
+- User can like a picture
+- The app saves the user likes and even persists even after reload of the page
+- The app uses the right HTML5 elements to support accessibility
+- Easy loading of the images. It uses that placeholder that blurs in as the actual image loads
+- While waiting for the data it shows a skeleton loader
+- Normalizes data before storing in state
 
-In the project directory, you can run:
+## Live URL
 
-### `npm start`
+The project has been host on Netlify at [Spacetagram](https://apodsnasa.netlify.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How to run the Program on Your Computer
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You’ll need to have Node >= 8.10 on your local development machine (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to switch Node versions between different projects.
 
-### `npm test`
+Locate the path of the project and install the dependencies with the command below
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/kwabena53/NasaChallenge.git
+npm install or yarn install
+```
 
-### `npm run build`
+Run the following command to start the app on your local service http://localhost:3000/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm start or yarn start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Security
+- The app does not expose the API URL and the API keys
+- It uses environment variables on the server (Netlify)
+- Uses gitignore to prevent pushing delicate information to GitHub
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Loading Screen`
+The app shows a skeleton loading view while waiting to get data from the API
+![Loading Screen](src/Assets/screenshot/view-screen.png "Loading Screen")
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Display APODs`
+The app will display all the APODs for the last 7 days. Showing their title, date of capture and description
+![Display APODs](src/Assets/screenshot/vid-apod-display.gif "Display APODs")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `Like and Unlike`
+The use should be able to like and unlike a picture as many times as they want.
+![Like and Unlike](src/Assets/image/likeunlike.gif "Like and Unlike image")
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `Easy Load`
+There is an easy loading feature for all images that are loaded for display. There is a placeholder and it blurs out to display the actual image
+![Easy Load](src/Assets/screenshot/easyloads.gif "Easy Load")
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `Saved Likes`
+The app pesists data. This means that when you like and image, it is saved and even when you reload the page it is not refreshed
+![Easy Load](src/Assets/screenshot/saveslikes.gif "Easy Load")
