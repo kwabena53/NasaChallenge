@@ -19,10 +19,17 @@ export const getData = () => {
             type: GET_DATA_REQUEST,
         });
         
+        //Ends  today
+        const date = new Date()
+        const end_date = date.toISOString().slice(0, 10).toString()
+
+        //starts 7 days from today
+        date.setDate(date.getDate() - 7)
+        const start_date = date.toISOString().slice(0, 10).toString()
         
         try {
             let { data } = await axios.get(
-                `${REACT_APP_NASA_API}?api_key=${REACT_APP_NASA_API_KEY}&start_date=2022-01-1&end_date=2022-01-10`,
+                `${REACT_APP_NASA_API}?api_key=${REACT_APP_NASA_API_KEY}&start_date=${start_date}&end_date=${end_date}`,
             );
 
             data = normalizeData(data)
