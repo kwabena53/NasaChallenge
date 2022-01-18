@@ -3,8 +3,9 @@ import './App.css';
 import Card from './Components/Card';
 
 const HomePage=() =>{
-    const state = useSelector((state)=>state.data)
-console.log(state)
+    const state = useSelector((state)=>state?.data?.apod)
+
+console.log("display: ",state)
   return (
     <div className="container">
     <header>
@@ -12,14 +13,14 @@ console.log(state)
     </header>
     <main >
         {
-            Object.values(state).map((data, i)=>{
+          state ?
+            Object.values(state).map((data)=>{
                 return(
-                    <Card data={data} key={i}/>
+                    <Card data={data} key={data?.date}/>
                 )
-            })
+            }):""
         }
-      <Card/>
-      <Card/>
+      
     </main>
     </div>
   );

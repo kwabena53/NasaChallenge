@@ -25,6 +25,7 @@ export const getData = () => {
                 type: GET_DATA_SUCCESS,
                 data
             });
+            
         } catch (error) {
             if (!error.response) {
                 dispatch({
