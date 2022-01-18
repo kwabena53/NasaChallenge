@@ -10,17 +10,17 @@ import { getData } from './duck/action';
 
 const App = () => {
 
-const dispatch = useDispatch()
-const storedData = localStorage.getItem('storedApods')
+  const dispatch = useDispatch()
+  const storedData = localStorage.getItem('storedApods')
 
-  useEffect(()=>{
-    if(!storedData){
+  useEffect(() => {
+    if (!storedData) {
       dispatch(getData())
     }
-  },[dispatch, storedData])
+  }, [dispatch, storedData])
 
   return (
-        <HomePage />
+    <HomePage />
   )
 }
 
