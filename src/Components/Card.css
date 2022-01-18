@@ -32,15 +32,20 @@ margin-bottom: 2em;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    color: rgb(128, 128, 128);
 
 }
 
 .btn:hover{
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(245, 244, 244);
 }
 
 .shade{
     color: #1877F2;
     border: 1px solid #1877F2;
     font-weight: bold;
+}
+
+.likeIcon{
+    fill: turquoise;
 }

@@ -1,4 +1,5 @@
 
+import { useState } from "react"
 import "./Card.css"
 import { LikeIcon } from "./Icons"
 
@@ -17,6 +18,11 @@ const DisplayMedia = ({data})=>{
 
 const Card = ({data})=>{
     const dt = new Date(data?.date)
+    const [isLiked ,setLike] = useState(false)
+
+    const handleLike = ()=>{
+        setLike(!isLiked)
+    }
     return(
         <article className="card">
             <div className="img-container">
@@ -29,7 +35,10 @@ const Card = ({data})=>{
                 {data?.explanation}
             </p>
             </div>
-            <button className="btn"> <LikeIcon width="1.2em" height="auto"/> unlike</button>
+            <button onClick={handleLike} className={`btn ${isLiked? "shade" : ""}`}> 
+                <LikeIcon width="1.2em" height="auto" className="likeIcon"/> 
+                like
+            </button>
         </article>
     )
 }
