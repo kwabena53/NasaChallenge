@@ -59,4 +59,4 @@ There is an easy loading feature for all images that are loaded for display. The
 
 ### `Saved Likes`
 The app pesists data. This means that when you like and image, it is saved and even when you reload the page it is not refreshed
-![Easy Load](src/Assets/screenshots/saveslikes.gif "Easy Load")
+![Easy Load](src/Assets/screenshots/savelikes.gif "Easy Load")
