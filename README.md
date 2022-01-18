@@ -43,20 +43,20 @@ npm start or yarn start
 
 ### `Loading Screen`
 The app shows a skeleton loading view while waiting to get data from the API
-![Loading Screen](src/Assets/screenshot/view-screen.png "Loading Screen")
+![Loading Screen](src/Assets/screenshots/skeletonState.png "Loading Screen") 
 
 ### `Display APODs`
 The app will display all the APODs for the last 7 days. Showing their title, date of capture and description
-![Display APODs](src/Assets/screenshot/vid-apod-display.gif "Display APODs")
+![Display APODs](src/Assets/screenshots/vid-apod-display.gif "Display APODs")
 
 ### `Like and Unlike`
 The use should be able to like and unlike a picture as many times as they want.
-![Like and Unlike](src/Assets/image/likeunlike.gif "Like and Unlike image")
+![Like and Unlike](src/Assets/screenshots/likeunlike.gif "Like and Unlike image")
 
 ### `Easy Load`
 There is an easy loading feature for all images that are loaded for display. There is a placeholder and it blurs out to display the actual image
-![Easy Load](src/Assets/screenshot/easyloads.gif "Easy Load")
+![Easy Load](src/Assets/screenshots/easyloads.gif "Easy Load")
 
 ### `Saved Likes`
 The app pesists data. This means that when you like and image, it is saved and even when you reload the page it is not refreshed
-![Easy Load](src/Assets/screenshot/saveslikes.gif "Easy Load")
+![Easy Load](src/Assets/screenshots/saveslikes.gif "Easy Load")
