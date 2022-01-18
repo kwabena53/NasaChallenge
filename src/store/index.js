@@ -4,6 +4,8 @@ import { createLogger } from "redux-logger";
 import rootReducer from "./reducers";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
+
 
 const middlewares = [thunkMiddleware];
 const logger = createLogger({ collapsed: true });
@@ -12,7 +14,7 @@ middlewares.push(logger);
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ['data']
+  stateReconciler: hardSet,
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

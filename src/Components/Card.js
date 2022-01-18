@@ -1,5 +1,7 @@
 
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { clickLikeButton } from "../duck/action"
 import "./Card.css"
 import { LikeIcon } from "./Icons"
 
@@ -18,10 +20,13 @@ const DisplayMedia = ({data})=>{
 
 const Card = ({data})=>{
     const dt = new Date(data?.date)
-    const [isLiked ,setLike] = useState(false)
+    const [isLiked ,setLike] = useState(data?.liked)
+    const dispatch = useDispatch()
 
-    const handleLike = ()=>{
+    const handleLike = (e)=>{
+        const value = e.target.value
         setLike(!isLiked)
+        dispatch(clickLikeButton(!isLiked, value))
     }
     return(
         <article className="card">
@@ -35,8 +40,8 @@ const Card = ({data})=>{
                 {data?.explanation}
             </p>
             </div>
-            <button onClick={handleLike} className={`btn ${isLiked? "shade" : ""}`}> 
-                <LikeIcon width="1.2em" height="auto" className="likeIcon"/> 
+            <button onClick={handleLike} value={data?.date} className={`btn ${isLiked? "shade" : ""}`}> 
+                <LikeIcon width="1.2em" height="1.2em" fill={isLiked? "currentColor" : "none"}/> 
                 like
             </button>
         </article>

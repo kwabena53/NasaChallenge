@@ -1,11 +1,12 @@
 
-import {GET_DATA_ERROR, GET_DATA_REQUEST, GET_DATA_SUCCESS} from "./action"
+import {GET_DATA_ERROR, GET_DATA_REQUEST, GET_DATA_SUCCESS, CLICK_LIKE} from "./action"
 
 const INITIAL_STATE = {
     gettingData: false
 }
 
 export default function reducer(state = INITIAL_STATE, action = { type: "" }) {
+    console.log("id: ",action.id)
 
     const { type } = action;
     switch (type) {
@@ -23,6 +24,18 @@ export default function reducer(state = INITIAL_STATE, action = { type: "" }) {
             return {
                 ...state,
                 error: action.error,
+            };
+        case CLICK_LIKE:
+            return {
+                ...state,
+                apod: {
+                    ...state.apod,
+                    [action.id]:{
+                        ...state.apod[action.id],
+                        liked: action.isLiked
+                    }
+                }
+                
             };
         default:
             return state;
