@@ -1,5 +1,5 @@
 import { useProgressiveImg } from "../utils/helper";
-const ProgressiveImg = ({ image,className, alt, ...props }) => {
+const ProgressiveImg = ({ image, className, alt, ...props }) => {
   const [src, { blur }] = useProgressiveImg(image);
 
   const blurStyles = {
