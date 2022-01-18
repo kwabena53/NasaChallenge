@@ -4,7 +4,7 @@ import React from "react"
 import ContentLoader from "react-content-loader"
 
 const SkeletonLoader = (props) => (
-    Array.apply(null, Array(props.num)).map(()=> {
+    Array.apply(null, Array(props.num)).map((x,i)=> {
         return(
         <ContentLoader 
             speed={2}
@@ -14,6 +14,7 @@ const SkeletonLoader = (props) => (
             backgroundColor="#f3f3f3"
             foregroundColor="#ecebeb"
             {...props}
+            key={i}
             >
             <rect x="48" y="8" rx="3" ry="3" width="88" height="6" /> 
             <rect x="48" y="26" rx="3" ry="3" width="52" height="6" /> 

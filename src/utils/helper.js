@@ -32,12 +32,7 @@ export const normalizeData = (data)=>{
     return formattedData
 }
 
-export const sortDataByDate = (data) => {
-    const sorted = data.sort(
-        (a, b) => new Date(b.date) - new Date(a.date)
-    );
-    return sorted
-}
+
 
 export const saveLike = (isLiked, id)=>{
     let data = JSON.parse(localStorage.getItem("storedApods"))

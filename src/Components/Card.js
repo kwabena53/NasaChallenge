@@ -9,7 +9,6 @@ import ProgressiveImg from "./ProgressiveImg"
 const DisplayMedia = ({data})=>{
     if(data?.media_type === "image"){
         return (
-            // <img className="media" src={data?.hdurl} alt={data?.title}/>
             <ProgressiveImg image={data?.hdurl} className="media" alt={data?.title}/>
         )
     }else{
