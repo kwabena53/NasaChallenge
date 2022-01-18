@@ -1,5 +1,5 @@
 import axios from "axios";
-import { normalizeData } from "../utils/helper";
+import { normalizeData, saveLike } from "../utils/helper";
 
 export const GET_DATA_REQUEST = "GET_DATA_REQUEST"
 export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS"
@@ -39,7 +39,7 @@ export const getData = () => {
                 data
             });
 
-            localStorage.setItem("storedApods", data)
+            localStorage.setItem("storedApods", JSON.stringify(data))
             
         } catch (error) {
             if (!error.response) {
@@ -59,9 +59,22 @@ export const getData = () => {
 }
 
 export const clickLikeButton =(isLiked, id)=>{
-    return {
-            type: CLICK_LIKE,
-            isLiked,
-            id
+
+    return(dispatch)=>{
+        try{
+            saveLike(isLiked, id)
+
+            dispatch({
+                    type: CLICK_LIKE,
+                    isLiked,
+                    id
+                })
+        }catch (error){
+            dispatch({
+                type: GET_DATA_ERROR,
+                error: "Couldn't save like"
+            });
         }
+    }
+   
 }

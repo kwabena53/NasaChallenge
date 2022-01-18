@@ -1,5 +1,5 @@
-
-
+import ImagePlaceholder from "../Assets/image/imgPlace.png"
+import React from "react"
 export const normalizeData = (data)=>{
     let formattedData = {}
 
@@ -38,3 +38,32 @@ export const sortDataByDate = (data) => {
     );
     return sorted
 }
+
+export const saveLike = (isLiked, id)=>{
+    let data = JSON.parse(localStorage.getItem("storedApods"))
+
+    data = {
+        ...data,
+        [id]:{
+            ...data[id],
+            liked: isLiked
+        }
+
+    }
+
+    localStorage.setItem("storedApods", JSON.stringify(data))  
+}
+
+
+export const useProgressiveImg = (highQualitySrc) => {
+    const [src, setSrc] = React.useState(ImagePlaceholder);
+    React.useEffect(() => {
+      setSrc(ImagePlaceholder);
+      const img = new Image();
+      img.src = highQualitySrc;
+      img.onload = () => {
+        setSrc(highQualitySrc);
+      };
+    }, [highQualitySrc]);
+    return [src, { blur: src === ImagePlaceholder }];
+  };

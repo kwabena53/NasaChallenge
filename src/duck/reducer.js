@@ -6,8 +6,6 @@ const INITIAL_STATE = {
 }
 
 export default function reducer(state = INITIAL_STATE, action = { type: "" }) {
-    console.log("id: ",action.id)
-
     const { type } = action;
     switch (type) {
         case GET_DATA_REQUEST:
@@ -37,6 +35,7 @@ export default function reducer(state = INITIAL_STATE, action = { type: "" }) {
                 }
                 
             };
+            
         default:
             return state;
     }

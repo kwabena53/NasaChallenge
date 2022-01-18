@@ -11,9 +11,13 @@ import { getData } from './duck/action';
 const App = () => {
 
 const dispatch = useDispatch()
+const storedData = localStorage.getItem('storedApods')
+
   useEffect(()=>{
-    dispatch(getData())
-  },[dispatch])
+    if(!storedData){
+      dispatch(getData())
+    }
+  },[dispatch, storedData])
 
   return (
         <HomePage />

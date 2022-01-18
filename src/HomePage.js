@@ -4,17 +4,21 @@ import Card from './Components/Card';
 import SkeletonLoader from './Components/SkeletonLoader';
 
 const HomePage=() =>{
-    const state = useSelector((state)=>state?.data?.apod)
+    let state = useSelector((state)=>state?.data?.apod)
+    // const savedState = JSON.parse(localStorage.getItem('storedApods'))
+    // state = savedState? savedState: state
 
-console.log("display: ",state)
+
   return (
-    <div className="container">
+    <div className='container'>
     <header>
       <h1>Spacestagram</h1>
+      <p> Brought to you by NASA's Astronomy Photo of the day (APOD) API</p>
+      <p className='subPara'>APOD for the last 7 days</p>
     </header>
     <main >
         {
-          undefined ?
+          state ?
             Object.values(state).map((data)=>{
                 return(
                     <Card data={data} key={data?.date}/>
