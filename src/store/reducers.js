@@ -4,7 +4,7 @@ import dataReducer from "../duck/reducer";
 
 
 const reducers = combineReducers({
-  data: dataReducer, 
+  data: dataReducer,
 });
 
 export default reducers;
